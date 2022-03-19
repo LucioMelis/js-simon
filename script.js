@@ -41,3 +41,27 @@ function askUserAString(message) { // messagge è l'argomento
 // Dopo che sono stati inseriti i 5 numeri,
 //  il software dice quanti e quali dei numeri
 //  da indovinare sono stati individuati.
+
+
+// prendo il button dall'html 
+const buttonStart = document.getElementById('start')
+
+
+buttonStart.addEventListener('click', function () {
+    // creo un array per visualizzare 5 numericasuali
+    const arrayNumeriCasuali = [];
+    // applico un ciclo for per aggiungere all'array i numeri casuali generati
+    for (let i = 0; i < 5; i++) {
+        // variabile genera numero casuale 
+        let rangeNumeri = generaNumeroRandom(1, 100);
+        // cicla fin tanto che il numero generato è incluso nell'array 
+        while (arrayNumeriCasuali.includes(rangeNumeri)) {
+            // genera un altro numero 
+            rangeNumeri = generaNumeroRandom(1, 100);
+        }
+        // inserisci il numero generato nell'array
+        arrayNumeriCasuali.push(rangeNumeri);
+    }
+
+    console.log(arrayNumeriCasuali);
+})
