@@ -33,7 +33,7 @@ function askUserAString(message) { // messagge è l'argomento
 }
 
 // Descrizione:
-// Visualizzare in pagina 5 numeri casuali.
+// Visualizzare in pagina 5 numeri casuali. V
 // Da lì parte un timer di 30 secondi.
 // Dopo 30 secondi l'utente deve inserire,
 // uno alla volta,
@@ -44,7 +44,9 @@ function askUserAString(message) { // messagge è l'argomento
 
 
 // prendo il button dall'html 
-const buttonStart = document.getElementById('start')
+const buttonStart = document.getElementById('start');
+// prendo il paragrafo dall'html
+const paragrafoRisultato = document.getElementById('result');
 
 
 buttonStart.addEventListener('click', function () {
@@ -63,5 +65,6 @@ buttonStart.addEventListener('click', function () {
         arrayNumeriCasuali.push(rangeNumeri);
     }
 
-    console.log(arrayNumeriCasuali);
+    paragrafoRisultato.innerText = `I numeri sono : ${arrayNumeriCasuali.join(' - ')}`;
+
 })
