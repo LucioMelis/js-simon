@@ -64,7 +64,7 @@ buttonStart.addEventListener('click', function () {
     setTimeout(function () {
         paragrafoRisultato.classList.remove('red');
         paragrafoRisultato.innerText = 'Ora inserisci i numeri';
-    }, 2500)
+    }, 30000)
 
     // Ho aggiunto un altro Set TimeOut per il prompt poichè causava problemi  
     setTimeout(function () {
@@ -72,24 +72,30 @@ buttonStart.addEventListener('click', function () {
         const arrayDatiUtente = [];
         // ciclo che mi permette di inserire i dati dell'utente in un array 
         for (let i = 0; i < 5; i++) {
+            // chiamo la variabile dopo la funzione controllo  
             let numeriInseriti = controlloNumeriInseriti();
-
+            // uso una condizione per inserire i numeri che sono già inclusi nell'array precedente 
             if (arrayNumeriCasuali.includes(numeriInseriti)) {
                 arrayDatiUtente.push(numeriInseriti);
             }
         }
 
+        // utilizzo una condizione per la parte finale
+        // se la lunghezza dell'array è uguale 0, l'utente non avrà inserito nessun numero 
         if (arrayDatiUtente.length == 0) {
             paragrafoRisultato.classList.add('red');
             paragrafoRisultato.innerText = 'Game Over';
+            // altrimenti se la lunghezza è minore di 5 e maggiore di zero
+            // l'utente avrà inserito alcuni numeri corretti 
         } else if (arrayDatiUtente.length < 5 && arrayDatiUtente.length > 0) {
-            paragrafoRisultato.innerText = `Hai Indovinato : ${arrayDatiUtente.length} numeri, i numeri sono ${arrayDatiUtente.join(' - ')}`;
+            paragrafoRisultato.innerText = `Hai Indovinato : ${arrayDatiUtente.length} numeri, i numeri sono : ${arrayDatiUtente.join(' - ')}`;
+            // altrimenti avrà inserito tutti i numeri e quindi avrà concluso il gioco     
         } else {
             paragrafoRisultato.classList.add('green');
             paragrafoRisultato.innerText = `You WIN hai indovinato tutti i numeri : ${arrayDatiUtente.join(' - ')}`;
         }
 
-    }, 3000)
+    }, 30500)
 
 })
 

@@ -12,9 +12,9 @@ body{
 
 .lm-row{
     border-radius: 22px;
-    background: linear-gradient(45deg, #dddddd, #ffffff);
-    box-shadow:  31px -31px 25px #b5b5b5,
-                 -31px 31px 25px #ffffff;
+    background: #e7eee7;
+    box-shadow: inset -31px -31px 19px #d7ddd7,
+            inset 31px 31px 19px #f7fff7;
     padding: 20px;
 }
 
