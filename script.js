@@ -75,7 +75,7 @@ buttonStart.addEventListener('click', function () {
             // chiamo la variabile dopo la funzione controllo  
             let numeriInseriti = controlloNumeriInseriti();
             // uso una condizione per inserire i numeri che sono già inclusi nell'array precedente 
-            if (arrayNumeriCasuali.includes(numeriInseriti)) {
+            if (arrayNumeriCasuali.includes(numeriInseriti) && !arrayDatiUtente.includes(numeriInseriti)) {
                 arrayDatiUtente.push(numeriInseriti);
             }
         }
