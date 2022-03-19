@@ -1,29 +1,6 @@
 console.log('Js Ok');
 
-// Funzione Genera Numeri Random 
-function generaNumeroRandom(min, max) {
-    const range = max - min + 1;
-    const generatedNumber = Math.floor(Math.random() * range) + min;
-    return generatedNumber;
-}
-// Funzione Pari o Dispari 
-function isEvenOrOdd(num) {
-    if (num % 2 === 0) {
-        return 'even';
-    } else {
-        return 'odd';
-    }
-}
-// Funzione Comparazione due stringhe 
-function getLongestString(string1, string2) {
-    let longestString;
-    if (string1.length > string2.length) {
-        longestString = string1;
-    } else {
-        longestString = string2;
-    }
-    return longestString;
-}
+
 // Funzione messaggio Utente 
 function askUserAString(message) { // messagge è l'argomento
     // chiedo all'utente con messaggio passato via argomento
@@ -33,7 +10,7 @@ function askUserAString(message) { // messagge è l'argomento
 }
 
 // Descrizione:
-// Visualizzare in pagina 5 numeri casuali. V
+// Visualizzare in pagina 5 numeri casuali. ///FATTO
 // Da lì parte un timer di 30 secondi.
 // Dopo 30 secondi l'utente deve inserire,
 // uno alla volta,
@@ -42,6 +19,12 @@ function askUserAString(message) { // messagge è l'argomento
 //  il software dice quanti e quali dei numeri
 //  da indovinare sono stati individuati.
 
+// Funzione Genera Numeri Random 
+function generaNumeroRandom(min, max) {
+    const range = max - min + 1;
+    const generatedNumber = Math.floor(Math.random() * range) + min;
+    return generatedNumber;
+}
 
 // prendo il button dall'html 
 const buttonStart = document.getElementById('start');
@@ -65,6 +48,21 @@ buttonStart.addEventListener('click', function () {
         arrayNumeriCasuali.push(rangeNumeri);
     }
 
+    paragrafoRisultato.classList.add('red');
     paragrafoRisultato.innerText = `I numeri sono : ${arrayNumeriCasuali.join(' - ')}`;
 
+    setTimeout(function () {
+        paragrafoRisultato.classList.remove('red');
+        paragrafoRisultato.innerText = 'Ora inserisci i numeri';
+    }, 2500)
+
+    setTimeout(function () {
+        for (let i = 0; i < 5; i++) {
+            const inserisciNumeri = parseInt(prompt('Inserisci un numero per volta'))
+        }
+    }, 3000)
 })
+
+
+
+
