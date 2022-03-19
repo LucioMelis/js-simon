@@ -4,8 +4,18 @@ html, body{
 }
 
 body{
-    background-image:url(img/downloadenigmista.jpg);
+    background-image: url(img/159517-Batman-Green_Riddle-The_Riddler-748x468.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.lm-row{
+    border-radius: 22px;
+    background: linear-gradient(45deg, #dddddd, #ffffff);
+    box-shadow:  31px -31px 25px #b5b5b5,
+                 -31px 31px 25px #ffffff;
+    padding: 20px;
 }
 
 .red{
@@ -13,4 +23,14 @@ body{
 }
 .remove{
     display: none;
+}
+.green{
+    color:green;
+}
+
+h1{
+    font-size: 3.5rem!important;
+}
+#result{
+    font-size: 1.5rem;
 }
